@@ -7,8 +7,13 @@
 
 ## Installation
 
+原作者
 ```
 composer require grace-team-work/ads-marketing-api
+```
+
+```
+composer require westng/oc-marketing-api
 ```
 
 ## Requirements
