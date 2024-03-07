@@ -2,8 +2,8 @@
 /**
  * 获取广告组
  * 获取广告组列表，可指定fields获取每个广告组的基本元素。
- * User: yueguang
- * Date: 2022/4/17
+ * User: westng
+ * Date: 2024/4/17
  * Time: 14:28
  */
 

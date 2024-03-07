@@ -1,8 +1,8 @@
 <?php
 /**
  * 广告创意数据（新版）
- * User: yueguang
- * Date: 2022/4/29
+ * User: westng
+ * Date: 2024/4/29
  * Time: 10:41
  */
 

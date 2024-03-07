@@ -1,5 +1,9 @@
+# 重要提醒
+- 项目复制别人的， 谢谢GraceTeamWork
+- 项目原地址：https://github.com/GraceTeamWork/ads-marketing-api
+
 # ads-marketing-api
-- 巨量引擎 MARKETING API SDK
+- 巨量引擎 随心推 MARKETING API SDK
 
 ## Installation
 
@@ -10,6 +14,11 @@ composer require grace-team-work/ads-marketing-api
 ## Requirements
 
 - PHP 5.4 +
+
+## 重要更新
+更新随心推API
+
+
 
 ## Directory Structure
 ```

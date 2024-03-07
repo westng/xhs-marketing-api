@@ -3,8 +3,8 @@
  * 获取创意列表
  * 通过新版的创意列表接口较老版creative/select接口增加创意的视频ID、创意拒绝理由的返回，
  * 除此之外新版接口支持多维度的fields过滤，能给你带来更好的使用体验。
- * User: yueguang
- * Date: 2022/4/12
+ * User: westng
+ * Date: 2024/4/12
  * Time: 10:02
  */
 namespace AdvertisingOriginality;

@@ -1,8 +1,8 @@
 <?php
 /**
  * 创意详细信息
- * User: yueguang
- * Date: 2022/4/12
+ * User: westng
+ * Date: 2024/4/12
  * Time: 14:40
  */
 namespace AdvertisingOriginality;

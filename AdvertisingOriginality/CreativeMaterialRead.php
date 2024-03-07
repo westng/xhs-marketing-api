@@ -2,8 +2,8 @@
 /**
  * 创意素材信息
  * 披露广告创意素材信息(支持查询图片、标题、素材类型、对应计划ID等)。
- * User: yueguang
- * Date: 2022/4/12
+ * User: westng
+ * Date: 2024/4/12
  * Time: 15:45
  */
 namespace AdvertisingOriginality;

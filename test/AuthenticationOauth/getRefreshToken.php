@@ -1,8 +1,8 @@
 <?php
 /**
  * 刷新access_token
- * User: yueguang
- * Date: 2022/4/12
+ * User: westng
+ * Date: 2024/4/12
  * Time: 16:31
  */
 require __DIR__ . '/../../index.php';

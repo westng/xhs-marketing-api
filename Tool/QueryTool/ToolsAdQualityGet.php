@@ -1,8 +1,8 @@
 <?php
 /**
  * 查询广告质量度
- * User: yueguang
- * Date: 2022/4/31
+ * User: westng
+ * Date: 2024/4/31
  * Time: 16:07
  */
 

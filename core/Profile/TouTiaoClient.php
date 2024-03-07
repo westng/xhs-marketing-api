@@ -1,8 +1,8 @@
 <?php
 /**
  * Created by PhpStorm.
- * User: yueguang
- * Date: 2022/4/17
+ * User: westng
+ * Date: 2024/4/17
  * Time: 16:29
  */
 
@@ -17,9 +17,9 @@ class TouTiaoClient
 {
     public static $access_token;
 
-    public static $server_url = 'https://ad.oceanengine.com/open_api';
+    public static $server_url = 'https://api.oceanengine.com/open_api';
 
-    public static $box_url = 'https://ad.oceanengine.com/open_api';
+    public static $box_url = 'https://api.oceanengine.com/open_api';
 
     public static $is_sanbox = false;
 
@@ -104,6 +104,11 @@ class TouTiaoClient
         return new \Tool\Module(self::$instance[static::$access_token]);
     }
 
+    public static function Tools()
+    {
+        return new \Tools\Module(self::$instance[static::$access_token]);
+    }
+
     public static function Advertiser()
     {
         return new \Advertiser\Module(self::$instance[static::$access_token]);
@@ -122,5 +127,10 @@ class TouTiaoClient
     public static function Promotion()
     {
         return new \Promotion\Module(self::$instance[static::$access_token]);
+    }
+
+    public static function PushAsYouWish()
+    {
+        return new \PushAsYouWish\Module(self::$instance[static::$access_token]);
     }
 }

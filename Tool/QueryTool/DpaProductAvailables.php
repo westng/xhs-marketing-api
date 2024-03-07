@@ -1,8 +1,8 @@
 <?php
 /**
  * 查询DPA商品库可用类型
- * User: yueguang
- * Date: 2022/4/31
+ * User: westng
+ * Date: 2024/4/31
  * Time: 15:31
  */
 

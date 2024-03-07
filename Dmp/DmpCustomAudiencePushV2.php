@@ -1,8 +1,8 @@
 <?php
 /**
  * 推送人群包（新版）
- * User: yueguang
- * Date: 2022/4/30
+ * User: westng
+ * Date: 2024/4/30
  * Time: 15:32
  */
 

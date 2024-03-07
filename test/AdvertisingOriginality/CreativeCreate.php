@@ -1,8 +1,8 @@
 <?php
 /**
  * 创建广告创意
- * User: yueguang
- * Date: 2022/4/13
+ * User: westng
+ * Date: 2024/4/13
  * Time: 10:05
  */
 require __DIR__ . '/../../index.php';

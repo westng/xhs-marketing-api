@@ -4,6 +4,7 @@
     "keywords": [
         "巨量引擎",
         "头条",
+        "随心推",
         "marketing-api",
         "sdk"
     ],
@@ -30,10 +31,12 @@
             "AdvertisingPlan\\": "AdvertisingPlan/",
             "AuthenticationOauth\\": "AuthenticationOauth/",
             "Tool\\": "Tool/",
+            "Tools\\": "Tools/",
             "Advertiser\\": "Advertiser/",
             "NewReport\\": "NewReport/",
             "Project\\": "Project/",
-            "Promotion\\": "Promotion/"
+            "Promotion\\": "Promotion/",
+            "PushAsYouWish\\": "PushAsYouWish/"
         }
     }
 }

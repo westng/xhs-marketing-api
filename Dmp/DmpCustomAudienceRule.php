@@ -1,8 +1,8 @@
 <?php
 /**
  * 规则人群包
- * User: yueguang
- * Date: 2022/4/30
+ * User: westng
+ * Date: 2024/4/30
  * Time: 17:21
  */
 

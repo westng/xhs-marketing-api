@@ -1,8 +1,8 @@
 <?php
 /**
  * 修改创意信息
- * User: yueguang
- * Date: 2022/4/13
+ * User: westng
+ * Date: 2024/4/13
  * Time: 12:02
  */
 require __DIR__ . '/../../index.php';

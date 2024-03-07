@@ -1,0 +1,46 @@
+<?php
+
+namespace Tools;
+
+use core\Exception\TouTiaoException;
+use core\Profile\BaseModule;
+
+/**
+ * Class Module
+ * @package Tool
+ *
+ *  @property \Tool\AppManagement\Module $appManagement
+ * @property \Tool\AdConvert\Module $adConvert
+ * @property  \Tool\CreativeWord\Module $creativeWord
+ * @property  \Tool\File\Module $file
+ * @property  \Tool\InterestTag\Module $interestTag
+ * @property  \Tool\PicToVideo\Module $picToVideo
+ * @property  \Tool\QueryTool\Module $queryTool
+ *  @property \Tool\AudiencePackage\Module $audiencePackage
+ */
+class Module extends BaseModule
+{
+    private $providers = [
+        'audienceMgmt' => \Tools\AudienceMgmt\Module::class,
+        'behavioralInterests' => \Tools\BehavioralInterests\Module::class,
+        'influencerTargeting' => \Tools\InfluencerTargeting\Module::class,
+        'queryTool' => \Tools\QueryTool\Module::class,
+        'commentMgmt' => \Tools\CommentMgmt\Module::class
+    ];
+
+    /**
+     * @param $name
+     * @return mixed
+     * @throws TouTiaoException
+     */
+    public function __get($name)
+    {
+        if (!property_exists($this, $name)) {
+            if (array_key_exists($name, $this->providers)) {
+                return new $this->providers[$name]($this->client);
+            }
+            throw new TouTiaoException("Undefind property $name", 500);
+        }
+        return $this->$name;
+    }
+}

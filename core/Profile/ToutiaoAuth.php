@@ -1,8 +1,8 @@
 <?php
 /**
  * Created by PhpStorm.
- * User: yueguang
- * Date: 2022/4/22
+ * User: westng
+ * Date: 2024/4/22
  * Time: 12:28
  */
 
@@ -22,9 +22,9 @@ class ToutiaoAuth
 
     public $secret;
 
-    public $server_url = 'https://ad.oceanengine.com/open_api';
+    public $server_url = 'https://api.oceanengine.com/open_api';
 
-    public $box_url = 'https://ad.oceanengine.com/open_api';
+    public $box_url = 'https://api.oceanengine.com/open_api';
 
     public $is_sanbox = false;
 
