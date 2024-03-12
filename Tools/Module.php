@@ -9,14 +9,11 @@ use core\Profile\BaseModule;
  * Class Module
  * @package Tool
  *
- *  @property \Tool\AppManagement\Module $appManagement
- * @property \Tool\AdConvert\Module $adConvert
- * @property  \Tool\CreativeWord\Module $creativeWord
- * @property  \Tool\File\Module $file
- * @property  \Tool\InterestTag\Module $interestTag
- * @property  \Tool\PicToVideo\Module $picToVideo
- * @property  \Tool\QueryTool\Module $queryTool
- *  @property \Tool\AudiencePackage\Module $audiencePackage
+ * @property \Tools\AudienceMgmt\Module $audienceMgmt
+ * @property \Tools\BehavioralInterests\Module $behavioralInterests
+ * @property  \Tools\InfluencerTargeting\Module $influencerTargeting
+ * @property  \Tools\QueryTool\Module $queryTool
+ * @property  \Tools\CommentMgmt\Module $commentMgmt 
  */
 class Module extends BaseModule
 {

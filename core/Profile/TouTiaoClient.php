@@ -78,7 +78,14 @@ class TouTiaoClient
     {
         return new \Report\Module(self::$instance[static::$access_token]);
     }
-
+    public static function Account()
+    {
+        return new \Account\Module(self::$instance[static::$access_token]);
+    }
+    public static function Funds()
+    {
+        return new \Funds\Module(self::$instance[static::$access_token]);
+    }
     public static function AdvertisingDelivery()
     {
         return new \AdvertisingDelivery\Module(self::$instance[static::$access_token]);

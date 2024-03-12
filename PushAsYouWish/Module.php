@@ -16,4 +16,29 @@ class Module extends BaseModule
     {
         return new AwemeOrderCreate($this->client);
     }
+
+    public function awemeOrderDetailGet()
+    {
+        return new AwemeOrderDetailGet($this->client);
+    }
+
+    public function awemeOrderGet()
+    {
+        return new AwemeOrderGet($this->client);
+    }
+
+    public function awemeOrderTerminate()
+    {
+        return new AwemeOrderTerminate($this->client);
+    }
+
+    public function awemeOrderBudgetAdd()
+    {
+        return new AwemeOrderBudgetAdd($this->client);
+    }
+
+    public function awemeReportOrderGet()
+    {
+        return new AwemeReportOrderGet($this->client);
+    }
 }

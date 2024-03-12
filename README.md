@@ -22,7 +22,15 @@ composer require westng/oc-marketing-api
 
 ## 重要更新
 更新随心推API
+----------------新增模块-------------
+PushAsYouWish/                 随心推投放
+Tools/                         New工具模块
+Funds/                         资金管理 
+Account/                       账户管理
+  Account/Relationship         账户管理/账户关系获取
+  Account/Information          账户管理/账户信息获取
 
+  
 
 
 ## Directory Structure
@@ -43,6 +51,13 @@ Tool/                          工具模块
   Tool/AdConvert               工具模块/转化目标管理
   Tool/CreativeWord            工具模块/动态创意词包管理
   Tool/File                    工具模块/素材管理
+----------------新增模块-------------
+PushAsYouWish/                 随心推投放
+Tools/                         New工具模块
+Funds/                         资金管理 
+Account/                       账户管理
+  Account/Relationship         账户管理/账户关系获取
+  Account/Information          账户管理/账户信息获取
 ```
 
 ## Example

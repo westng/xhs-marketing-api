@@ -26,6 +26,8 @@
             "core\\": "core/",
             "Report\\": "Report/",
             "Dmp\\": "Dmp/",
+            "Account\\": "Account/",
+            "Funds\\": "Funds/",
             "AdvertisingDelivery\\": "AdvertisingDelivery/",
             "AdvertisingOriginality\\": "AdvertisingOriginality/",
             "AdvertisingPlan\\": "AdvertisingPlan/",
