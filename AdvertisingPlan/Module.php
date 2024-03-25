@@ -22,6 +22,11 @@ class Module extends BaseModule
         return new AdGet($this->client);
     }
 
+    public function adDetail()
+    {
+        return new AdDetail($this->client);
+    }
+
     public function adUpdate()
     {
         return new AdUpdate($this->client);

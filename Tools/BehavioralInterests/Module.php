@@ -25,4 +25,14 @@ class Module extends BaseModule
     {
         return new ToolsInterestActionInterestKeyword($this->client);
     } 
+
+    public function toolsInterestActionKeyword()
+    {
+        return new ToolsInterestActionKeyword($this->client);
+    } 
+
+    public function toolsInterestKeywordSuggest()
+    {
+        return new ToolsInterestKeywordSuggest($this->client);
+    } 
 }

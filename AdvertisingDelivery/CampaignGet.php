@@ -17,7 +17,7 @@ class CampaignGet extends RpcRequest
      * @var string
      */
     protected $method = 'GET';
-    protected $url = '/2/campaign/get/';
+    protected $url = 'https://ad.oceanengine.com/open_api/v1.0/qianchuan/campaign_list/get/';
     protected $content_type = 'application/json';
 
     /**

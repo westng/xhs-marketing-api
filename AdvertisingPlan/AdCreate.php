@@ -1,6 +1,7 @@
 <?php
 /**
- * 创建广告计划
+ * 创建计划（含创意生成规则）
+ * 用于创建一条完整的广告计划，包括投放规则（出价预算）、定向规则、创意（自定义创意/程序化创意）
  * User: westng
  * Date: 2024/4/29
  * Time: 14:56
@@ -18,7 +19,7 @@ class AdCreate extends RpcRequest
      * @var string
      */
     protected $method = 'POST';
-    protected $url = '/2/ad/create/';
+    protected $url = 'https://ad.oceanengine.com/open_api/v1.0/qianchuan/ad/create/';
     protected $content_type = 'application/json';
 
     /**

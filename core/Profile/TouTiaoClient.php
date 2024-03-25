@@ -140,4 +140,9 @@ class TouTiaoClient
     {
         return new \PushAsYouWish\Module(self::$instance[static::$access_token]);
     }
+
+    public static function ProductManage()
+    {
+        return new \ProductManage\Module(self::$instance[static::$access_token]);
+    }
 }

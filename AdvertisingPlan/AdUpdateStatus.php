@@ -1,7 +1,7 @@
 <?php
 /**
  * 更新计划状态
- * 通过此接口可对计划做启用/暂停/删除操作。
+ * 通过此接口可对计划做启用/暂停/删除操作，一次可以处理10个计划
  * User: westng
  * Date: 2024/4/30
  * Time: 11:18
@@ -19,7 +19,7 @@ class AdUpdateStatus extends RpcRequest
      * @var string
      */
     protected $method = 'POST';
-    protected $url = '/2/ad/update/status/';
+    protected $url = 'https://ad.oceanengine.com/open_api/v1.0/qianchuan/ad/status/update/';
     protected $content_type = 'application/json';
 
     /**

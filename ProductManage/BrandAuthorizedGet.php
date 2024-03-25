@@ -1,25 +1,28 @@
 <?php
 /**
- * 获取账户下计划列表（不含创意）
- * 用于获取千川广告账户下创建的计划列表（不含创意部分） 默认可以拉取全部计划详情，可以通过过滤拉取部分计划
+ * 获取广告主绑定的品牌列表
+ * 在品牌新客场景下，支持广告主选择具体绑定的品牌进行新客投放
+ * 投放到近365天未在该品牌下发生过成交订单的人群
+ * 如您的巨量千川账户与品牌解除授权，品牌新客定向功能将失效，但计划不会停止投放，而是扩展到其他人群，请谨慎操作
+ * 
  * User: westng
- * Date: 2024/4/29
- * Time: 11:57
+ * Date: 2024/03/17
+ * Time: 15:00
  */
 
-namespace AdvertisingPlan;
+namespace ProductManage;
 
 use core\Exception\InvalidParamException;
 use core\Helper\RequestCheckUtil;
 use core\Profile\RpcRequest;
 
-class AdGet extends RpcRequest
+class BrandAuthorizedGet extends RpcRequest
 {
     /**
      * @var string
      */
     protected $method = 'GET';
-    protected $url = 'https://ad.oceanengine.com/open_api/v1.0/qianchuan/ad/get/';
+    protected $url = 'https://api.oceanengine.com/open_api/v1.0/qianchuan/brand/authorized/get/';
     protected $content_type = 'application/json';
 
     /**
@@ -45,6 +48,7 @@ class AdGet extends RpcRequest
      */
     public function check()
     {
+        RequestCheckUtil::checkNotNull($this->advertiser_id, 'advertiser_id');
     }
 
 

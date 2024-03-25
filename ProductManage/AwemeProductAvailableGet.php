@@ -1,25 +1,26 @@
 <?php
 /**
- * 更新计划出价
- * 用于更新广告计划的出价 bid，一次可以处理10个计划
+ * 达人获取可投商品列表
+ * 获取达人账户下可投商品列表接口
+ * 
  * User: westng
- * Date: 2024/4/30
- * Time: 12:03
+ * Date: 2024/03/17
+ * Time: 15:00
  */
 
-namespace AdvertisingPlan;
+namespace ProductManage;
 
 use core\Exception\InvalidParamException;
 use core\Helper\RequestCheckUtil;
 use core\Profile\RpcRequest;
 
-class AdUpdateBid extends RpcRequest
+class AwemeProductAvailableGet extends RpcRequest
 {
     /**
      * @var string
      */
-    protected $method = 'POST';
-    protected $url = 'https://ad.oceanengine.com/open_api/v1.0/qianchuan/ad/bid/update/';
+    protected $method = 'GET';
+    protected $url = 'https://api.oceanengine.com/open_api/v1.0/qianchuan/aweme/product/available/get/';
     protected $content_type = 'application/json';
 
     /**
@@ -45,6 +46,7 @@ class AdUpdateBid extends RpcRequest
      */
     public function check()
     {
+        RequestCheckUtil::checkNotNull($this->advertiser_id, 'advertiser_id');
     }
 
 

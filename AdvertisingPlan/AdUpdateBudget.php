@@ -1,7 +1,7 @@
 <?php
 /**
  * 更新计划预算
- * 广告更新预算(也可使用update接口指定budget修改预算)
+ * 通过此接口用于更新广告计划的预算，一次可以处理10个计划
  * User: westng
  * Date: 2024/4/30
  * Time: 11:44
@@ -19,7 +19,7 @@ class AdUpdateBudget extends RpcRequest
      * @var string
      */
     protected $method = 'POST';
-    protected $url = '/2/ad/update/budget/';
+    protected $url = 'https://ad.oceanengine.com/open_api/v1.0/qianchuan/ad/budget/update/';
     protected $content_type = 'application/json';
 
     /**

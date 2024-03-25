@@ -1,7 +1,7 @@
 <?php
 /**
- * 广告组更新状态
- * 通过此接口可对广告组做启用/暂停/删除操作。
+ * 广告组状态更新
+ * 此接口用于更新当前千川广告账户下的广告组的状态。
  * User: westng
  * Date: 2024/4/29
  * Time: 11:50
@@ -19,7 +19,7 @@ class CampaignUpdateStatus extends RpcRequest
      * @var string
      */
     protected $method = 'POST';
-    protected $url = '/2/campaign/update/status/';
+    protected $url = 'https://ad.oceanengine.com/open_api/v1.0/qianchuan/batch_campaign_status/update/';
     protected $content_type = 'application/json';
 
     /**

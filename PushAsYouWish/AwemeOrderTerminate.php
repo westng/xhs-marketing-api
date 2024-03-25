@@ -20,7 +20,7 @@ class AwemeOrderTerminate extends RpcRequest
     /**
      * @var string
      */
-    protected $method = 'GET';
+    protected $method = 'POST';
     protected $url = 'https://api.oceanengine.com/open_api/v1.0/qianchuan/aweme/order/terminate/';
     protected $content_type = 'application/json';
 

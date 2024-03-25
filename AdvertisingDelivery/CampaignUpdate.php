@@ -1,7 +1,7 @@
 <?php
 /**
- * 修改广告组
- * 修改广告组信息，可更改内容包括广告组名称、预算类型及预算，除此之外其他内容不允许修改。
+ * 广告组更新
+ * 此接口用于修改千川广告账户下的广告组。注： 每天至多修改20次
  * User: westng
  * Date: 2024/4/18
  * Time: 15:07
@@ -19,7 +19,7 @@ class CampaignUpdate extends RpcRequest
      * @var string
      */
     protected $method = 'POST';
-    protected $url = '/2/campaign/update/';
+    protected $url = 'https://ad.oceanengine.com/open_api/v1.0/qianchuan/campaign/update/';
     protected $content_type = 'application/json';
 
     /**

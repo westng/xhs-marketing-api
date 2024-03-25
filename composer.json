@@ -38,7 +38,8 @@
             "NewReport\\": "NewReport/",
             "Project\\": "Project/",
             "Promotion\\": "Promotion/",
-            "PushAsYouWish\\": "PushAsYouWish/"
+            "PushAsYouWish\\": "PushAsYouWish/",
+            "ProductManage\\": "ProductManage/"
         }
     }
 }
