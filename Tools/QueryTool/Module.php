@@ -11,4 +11,9 @@ class Module extends BaseModule
         return new ToolsIndustryGet($this->client);
     } 
  
+    public function toolsEstimateAudience()
+    {
+        return new ToolsEstimateAudience($this->client);
+    } 
+    
 }

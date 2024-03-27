@@ -1,6 +1,7 @@
 <?php
 /**
- * 广告计划数据（新版）
+ * 获取广告计划数据
+ * 此接口用于获取广告计划数据，如果需要获取随心推数据，请通过随心推相关接口获取。
  * User: westng
  * Date: 2024/4/28
  * Time: 18:28
@@ -14,7 +15,7 @@ use Dmp\DmpCustomAudienceDelete;
 
 class ReportAdGet extends RpcRequest
 {
-    protected $url = '/2/report/ad/get/';
+    protected $url = 'https://ad.oceanengine.com/open_api/v1.0/qianchuan/report/ad/get/';
     protected $content_type = 'application/json';
     protected $method = 'GET';
 

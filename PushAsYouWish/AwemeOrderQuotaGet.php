@@ -1,23 +1,27 @@
 <?php
 /**
- * 获取广告账户数据
- * 此接口用于获取广告主账户数据。
+ * 查询随心推使用中订单配额信息
+ * 查询小店随心推使用中订单配额信息，更多信息可参考：【小店随心推订单配额介绍文档】
+ * 
  * User: westng
- * Date: 2024/4/28
- * Time: 16:20
+ * Date: 2024/03/09
+ * Time: 18:00
  */
 
-namespace Report;
+namespace PushAsYouWish;
 
 use core\Exception\InvalidParamException;
 use core\Helper\RequestCheckUtil;
 use core\Profile\RpcRequest;
 
-class ReportAdvertiserGet extends RpcRequest
+class AwemeOrderQuotaGet extends RpcRequest
 {
-    protected $url = 'https://ad.oceanengine.com/open_api/v1.0/qianchuan/report/advertiser/get/';
-    protected $content_type = 'application/json';
+    /**
+     * @var string
+     */
     protected $method = 'GET';
+    protected $url = 'https://api.oceanengine.com/open_api/v1.0/qianchuan/aweme/order/quota/get/';
+    protected $content_type = 'application/json';
 
     /**
      * 广告主ID
@@ -37,10 +41,13 @@ class ReportAdvertiserGet extends RpcRequest
     }
 
     /**
+     *
      * @throws InvalidParamException
      */
     public function check()
     {
         RequestCheckUtil::checkNotNull($this->advertiser_id, 'advertiser_id');
     }
+
+
 }
