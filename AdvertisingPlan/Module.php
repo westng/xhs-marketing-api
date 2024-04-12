@@ -46,4 +46,44 @@ class Module extends BaseModule
     {
         return new AdUpdateStatus($this->client);
     }
+
+    public function adCompensateStatusGet()
+    {
+        return new AdCompensateStatusGet($this->client);
+    }
+
+    public function adEstimateEffect()
+    {
+        return new AdEstimateEffect($this->client);
+    }
+
+    public function adLearingStatusGet()
+    {
+        return new AdLearingStatusGet($this->client);
+    }
+
+    public function adLqAdGet()
+    {
+        return new AdLqAdGet($this->client);
+    }
+
+    public function adRejectReason()
+    {
+        return new AdRejectReason($this->client);
+    }
+
+    public function adSuggestBudget()
+    {
+        return new AdSuggestBudget($this->client);
+    }
+
+    public function adSuggestBid()
+    {
+        return new AdSuggestBid($this->client);
+    }
+
+    public function adSuggestRoiGoal()
+    {
+        return new AdSuggestRoiGoal($this->client);
+    }
 }

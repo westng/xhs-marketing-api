@@ -1,13 +1,14 @@
-<?php 
+<?php
 /**
- * 更新计划预算
- * 通过此接口用于更新广告计划的预算，一次可以处理10个计划
+ * 获取低效计划列表
+ * 用于获取千川广告账户下的低效计划列表
  * 
  * User: westng
  * Date: 2024-04-12
  * Time: 17:16:42
  */
 
+ 
 
 namespace AdvertisingPlan;
 
@@ -15,13 +16,13 @@ use core\Exception\InvalidParamException;
 use core\Helper\RequestCheckUtil;
 use core\Profile\RpcRequest;
 
-class AdUpdateBudget extends RpcRequest
+class AdLqAdGet extends RpcRequest
 {
     /**
      * @var string
      */
-    protected $method = 'POST';
-    protected $url = 'https://ad.oceanengine.com/open_api/v1.0/qianchuan/ad/budget/update/';
+    protected $method = 'GET';
+    protected $url = 'https://ad.oceanengine.com/open_api/v1.0/qianchuan/lq_ad/get/';
     protected $content_type = 'application/json';
 
     /**
@@ -48,6 +49,5 @@ class AdUpdateBudget extends RpcRequest
     public function check()
     {
     }
-
-
 }
+ 

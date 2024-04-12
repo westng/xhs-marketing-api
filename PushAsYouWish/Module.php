@@ -41,4 +41,10 @@ class Module extends BaseModule
     {
         return new AwemeReportOrderGet($this->client);
     }
+
+    public function awemeOrderQuotaGet()
+    {
+        return new AwemeOrderQuotaGet($this->client);
+    }
+    
 }
