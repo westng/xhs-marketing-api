@@ -55,4 +55,14 @@ class Module extends BaseModule
     {
         return new FileMaterialBind($this->client);
     }
+
+    public function fileCarouselAwemeGet()
+    {
+        return new FileCarouselAwemeGet($this->client);
+    }
+
+    public function fileVideoAwemeGet()
+    {
+        return new FileVideoAwemeGet($this->client);
+    }
 }

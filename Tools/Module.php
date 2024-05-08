@@ -22,7 +22,8 @@ class Module extends BaseModule
         'behavioralInterests' => \Tools\BehavioralInterests\Module::class,
         'influencerTargeting' => \Tools\InfluencerTargeting\Module::class,
         'queryTool' => \Tools\QueryTool\Module::class,
-        'commentMgmt' => \Tools\CommentMgmt\Module::class
+        'commentMgmt' => \Tools\CommentMgmt\Module::class,
+        'file' => \Tools\File\Module::class,
     ];
 
     /**
