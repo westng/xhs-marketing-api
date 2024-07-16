@@ -97,6 +97,12 @@ class TouTiaoClient
     {
         return new \Report\Module(self::$instance[static::$access_token]);
     }
+
+    public static function DataReport()
+    {
+        return new \DataReport\Module(self::$instance[static::$access_token]);
+    }
+
     public static function Account()
     {
         return new \Account\Module(self::$instance[static::$access_token]);

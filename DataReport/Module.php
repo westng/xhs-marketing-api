@@ -14,6 +14,7 @@ use core\Profile\BaseModule;
 class Module extends BaseModule
 {
     private $providers = [
+        'AdReport' => \DataReport\AdReport\Module::class,
         'liveReport' => \DataReport\LiveReport\Module::class, 
     ];
 

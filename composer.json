@@ -25,6 +25,7 @@
             "ToutiaoSdk\\": "core/Profile/",
             "core\\": "core/",
             "Report\\": "Report/",
+            "DataReport\\": "DataReport/",
             "Dmp\\": "Dmp/",
             "Account\\": "Account/",
             "Funds\\": "Funds/",
