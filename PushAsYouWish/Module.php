@@ -1,4 +1,4 @@
-<?php
+<?php 
 /**
  * Module
  * User: westng
@@ -47,4 +47,8 @@ class Module extends BaseModule
         return new AwemeOrderQuotaGet($this->client);
     }
     
+    public function awemeVideoGet()
+    {
+        return new AwemeVideoGet($this->client);
+    }
 }
