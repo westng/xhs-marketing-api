@@ -9,7 +9,7 @@
 namespace core\Profile;
 
 use core\Exception\XiaoHongShuException;
-use ToutiaoSdk\XiaoHongShuClient;
+use XiaoHongShuSdk\XiaoHongShuClient;
 
 class RpcRequest implements RequestInteface
 {

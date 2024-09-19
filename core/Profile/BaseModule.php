@@ -2,7 +2,7 @@
 
 namespace core\Profile;
 
-use ToutiaoSdk\XiaoHongShuClient;
+use XiaoHongShuSdk\XiaoHongShuClient;
 
 class BaseModule
 {

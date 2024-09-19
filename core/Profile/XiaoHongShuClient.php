@@ -6,7 +6,7 @@
  * Time: 16:29
  */
 
-namespace ToutiaoSdk;
+namespace XiaoHongShuSdk;
 
 use core\Exception\InvalidParamException;
 use core\Exception\XiaoHongShuException;

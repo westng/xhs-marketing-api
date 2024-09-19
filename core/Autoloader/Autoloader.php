@@ -15,7 +15,7 @@ class Autoloader
     );
 
     private static $replacePath = array(
-        "ToutiaoSdk\\" => "\\core\\Profile\\"
+        "XiaoHongShuSdk\\" => "\\core\\Profile\\"
     );
 
     /**
@@ -29,7 +29,7 @@ class Autoloader
             $file = $directories . DIRECTORY_SEPARATOR . $path . '.php';
             $file = str_replace('\\', DIRECTORY_SEPARATOR, $file);
             if (is_file($file)) {
-                var_dump(123,$file);
+                var_dump(123, $file);
                 include_once $file;
                 break;
             }
@@ -41,7 +41,7 @@ class Autoloader
         $file = $directories . DIRECTORY_SEPARATOR . $className . '.php';
         $file = str_replace('\\', DIRECTORY_SEPARATOR, $file);
         if (is_file($file)) {
-            var_dump(1234,$file);
+            var_dump(1234, $file);
             include_once $file;
 
         }
@@ -64,4 +64,3 @@ class Autoloader
 }
 
 spl_autoload_register(['core\Autoloader\Autoloader', 'autoload'], true, true);
-

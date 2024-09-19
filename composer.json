@@ -23,7 +23,7 @@
     "minimum-stability": "dev",
     "autoload": {
         "psr-4": {
-            "ToutiaoSdk\\": "core/Profile/",
+            "XiaoHongShuSdk\\": "core/Profile/",
             "core\\": "core/",
             "Report\\": "Report/"
         }

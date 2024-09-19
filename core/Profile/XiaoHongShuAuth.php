@@ -6,7 +6,7 @@
  * Time: 12:28
  */
 
-namespace ToutiaoSdk;
+namespace XiaoHongShuSdk;
 
 use AuthenticationOauth\GetAccessToken;
 use AuthenticationOauth\RefreshToken;
