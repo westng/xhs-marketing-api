@@ -22,9 +22,9 @@ class ToutiaoAuth
 
     public $secret;
 
-    public $server_url = 'https://api.oceanengine.com/open_api';
+    public $server_url = 'https://adapi.xiaohongshu.com';
 
-    public $box_url = 'https://api.oceanengine.com/open_api';
+    public $box_url = 'https://adapi.xiaohongshu.com';
 
     public $is_sanbox = false;
 
@@ -41,8 +41,12 @@ class ToutiaoAuth
         $this->app_id = $app_id;
         $this->secret = $secret;
         $this->is_sanbox = $is_sanbox;
-        if (null !== $server_url) $this->server_url = $server_url;
-        if (null !== $box_url) $this->box_url = $box_url;
+        if (null !== $server_url) {
+            $this->server_url = $server_url;
+        }
+        if (null !== $box_url) {
+            $this->box_url = $box_url;
+        }
     }
 
 
@@ -100,7 +104,8 @@ class ToutiaoAuth
     public function getAuthCodeUrl($cb_url, $scope, $state = "your_custom_params")
     {
         $cb_url_encode = urlencode($cb_url);
-        return "https://qianchuan.jinritemai.com/openapi/qc/audit/oauth.html?app_id=$this->app_id&state=$state&scope=$scope&material_auth=1&redirect_uri={$cb_url_encode}";
+        // https://ad-market.xiaohongshu.com/auth?appId=1214&scope=["report_service","ad_query","ad_manage","account_manage"]&redirectUri=https://www.recyou.cn/api/xhs/callback/index&state=abcd
+        return "https://ad-market.xiaohongshu.com/auth?appId=$this->app_id&state=$state&scope=$scope&redirectUri={$cb_url_encode}";
     }
 
     /**
@@ -111,13 +116,4 @@ class ToutiaoAuth
     {
         return TouTiaoClient::getInstance($access_token, $this->is_sanbox, $this->server_url, $this->box_url);
     }
-
-
-    public function advertiserGet($access_token)
-    {
-        $request = new AdvertiserGet();
-        $request->setParams(['access_token' => $access_token, 'app_id' => $this->app_id, 'secret' => $this->secret]);
-        return $this->execute($request)->getBody();
-    }
 }
-

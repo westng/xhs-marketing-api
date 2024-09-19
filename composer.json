@@ -1,10 +1,9 @@
 {
-    "name": "westng/oc-marketing-api",
-    "description": "巨量引擎 MarketingApi SDK",
+    "name": "westng/xhs-marketing-api",
+    "description": "小红书开放平台 MarketingApi SDK",
     "keywords": [
-        "巨量引擎",
-        "头条",
-        "随心推",
+        "小红书",
+        "小红书PHP SDK",
         "marketing-api",
         "sdk"
     ],
@@ -24,23 +23,7 @@
         "psr-4": {
             "ToutiaoSdk\\": "core/Profile/",
             "core\\": "core/",
-            "Report\\": "Report/",
-            "DataReport\\": "DataReport/",
-            "Dmp\\": "Dmp/",
-            "Account\\": "Account/",
-            "Funds\\": "Funds/",
-            "AdvertisingDelivery\\": "AdvertisingDelivery/",
-            "AdvertisingOriginality\\": "AdvertisingOriginality/",
-            "AdvertisingPlan\\": "AdvertisingPlan/",
-            "AuthenticationOauth\\": "AuthenticationOauth/",
-            "Tool\\": "Tool/",
-            "Tools\\": "Tools/",
-            "Advertiser\\": "Advertiser/",
-            "NewReport\\": "NewReport/",
-            "Project\\": "Project/",
-            "Promotion\\": "Promotion/",
-            "PushAsYouWish\\": "PushAsYouWish/",
-            "ProductManage\\": "ProductManage/"
+            "Report\\": "Report/"
         }
     }
 }

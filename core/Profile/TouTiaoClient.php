@@ -17,27 +17,37 @@ class TouTiaoClient
 {
     public static $access_token;
 
-    public static $server_url = 'https://api.oceanengine.com/open_api';
+    public static $server_url = 'https://adapi.xiaohongshu.com';
 
-    public static $box_url = 'https://api.oceanengine.com/open_api';
+    public static $box_url = 'https://adapi.xiaohongshu.com';
 
     public static $is_sanbox = false;
 
     private static $instance = null;
 
     // 禁止被实例化
-    private function __construct($access_token, $is_sanbox, $server_url, $box_url){}
+    private function __construct($access_token, $is_sanbox, $server_url, $box_url)
+    {
+    }
 
     // 禁止clone
-    private function __clone(){}
+    private function __clone()
+    {
+    }
 
     //  实例化自己并保存到$instance中，已实例化则直接调用
     public static function getInstance($access_token, $is_sanbox, $server_url, $box_url): object
     {
         static::$access_token = $access_token;
-        if (null !== $is_sanbox) static::$is_sanbox = $is_sanbox;
-        if (null !== $server_url) static::$server_url = $server_url;
-        if (null !== $box_url) static::$box_url = $box_url;
+        if (null !== $is_sanbox) {
+            static::$is_sanbox = $is_sanbox;
+        }
+        if (null !== $server_url) {
+            static::$server_url = $server_url;
+        }
+        if (null !== $box_url) {
+            static::$box_url = $box_url;
+        }
         if (empty(self::$instance[$access_token])) {
             self::$instance[$access_token] = new self($access_token, $is_sanbox, $server_url, $box_url);
         }
@@ -98,76 +108,4 @@ class TouTiaoClient
         return new \Report\Module(self::$instance[static::$access_token]);
     }
 
-    public static function DataReport()
-    {
-        return new \DataReport\Module(self::$instance[static::$access_token]);
-    }
-
-    public static function Account()
-    {
-        return new \Account\Module(self::$instance[static::$access_token]);
-    }
-    public static function Funds()
-    {
-        return new \Funds\Module(self::$instance[static::$access_token]);
-    }
-    public static function AdvertisingDelivery()
-    {
-        return new \AdvertisingDelivery\Module(self::$instance[static::$access_token]);
-    }
-
-    public static function AdvertisingOriginality()
-    {
-        return new \AdvertisingOriginality\Module(self::$instance[static::$access_token]);
-    }
-
-    public static function AdvertisingPlan()
-    {
-        return new \AdvertisingPlan\Module(self::$instance[static::$access_token]);
-    }
-
-    public static function Dmp()
-    {
-        return new \Dmp\Module(self::$instance[static::$access_token]);
-    }
-
-    public static function Tool()
-    {
-        return new \Tool\Module(self::$instance[static::$access_token]);
-    }
-
-    public static function Tools()
-    {
-        return new \Tools\Module(self::$instance[static::$access_token]);
-    }
-
-    public static function Advertiser()
-    {
-        return new \Advertiser\Module(self::$instance[static::$access_token]);
-    }
-
-    public static function NewReport()
-    {
-        return new \NewReport\Module(self::$instance[static::$access_token]);
-    }
-
-    public static function Project()
-    {
-        return new \Project\Module(self::$instance[static::$access_token]);
-    }
-
-    public static function Promotion()
-    {
-        return new \Promotion\Module(self::$instance[static::$access_token]);
-    }
-
-    public static function PushAsYouWish()
-    {
-        return new \PushAsYouWish\Module(self::$instance[static::$access_token]);
-    }
-
-    public static function ProductManage()
-    {
-        return new \ProductManage\Module(self::$instance[static::$access_token]);
-    }
 }
