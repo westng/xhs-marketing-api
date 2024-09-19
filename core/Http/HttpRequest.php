@@ -9,7 +9,7 @@
 
 namespace core\Http;
 
-use core\Exception\TouTiaoException;
+use core\Exception\XiaoHongShuException;
 
 class HttpRequest
 {
@@ -29,7 +29,7 @@ class HttpRequest
      * @param null $postFields
      * @param null $headers
      * @return HttpResponse
-     * @throws TouTiaoException
+     * @throws XiaoHongShuException
      */
     public static function curl($url, $httpMethod = 'GET', $postFields = null, $headers = null)
     {
@@ -77,8 +77,10 @@ class HttpRequest
         $httpResponse->setBody(curl_exec($ch));
         $httpResponse->setStatus(curl_getinfo($ch, CURLINFO_HTTP_CODE));
         if (curl_errno($ch)) {
-            throw new TouTiaoException('Server unreachable: Errno: ' . curl_errno($ch) . ' ' . curl_error($ch),
-                'SDK.ServerUnreachable');
+            throw new XiaoHongShuException(
+                'Server unreachable: Errno: ' . curl_errno($ch) . ' ' . curl_error($ch),
+                'SDK.ServerUnreachable'
+            );
         }
         curl_close($ch);
 

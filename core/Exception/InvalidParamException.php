@@ -8,7 +8,7 @@
 
 namespace core\Exception;
 
-class InvalidParamException extends TouTiaoException
+class InvalidParamException extends XiaoHongShuException
 {
     public function __construct($errorMessage, $errorCode = 500)
     {

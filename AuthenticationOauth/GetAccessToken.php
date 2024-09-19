@@ -1,9 +1,10 @@
 <?php
-/**
- * 获取access_token
- * User: westng
- * Date: 2024/4/21
- * Time: 10:31
+/*
+ * @Description: 获取access_token
+ * @Date: 2024-09-19 21:54:22
+ * @LastEditors: west_ng 457395070@qq.com
+ * @LastEditTime: 2024-09-19 21:57:37
+ * @FilePath: /xhs-marketing-api/AuthenticationOauth/GetAccessToken.php
  */
 
 namespace AuthenticationOauth;
@@ -17,7 +18,7 @@ class GetAccessToken extends RpcRequest
      */
     protected $method = 'POST';
 
-    protected $url = '/oauth2/access_token/';
+    protected $url = '/api/open/oauth2/access_token';
 
     protected $cotent_type = 'application/json';
 

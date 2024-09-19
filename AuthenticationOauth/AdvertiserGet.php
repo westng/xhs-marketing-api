@@ -1,9 +1,10 @@
 <?php
-/**
- * 获取access_token
- * User: westng
- * Date: 2024/4/21
- * Time: 10:31
+/*
+ * @Description: 获取access_token
+ * @Date: 2024-09-19 21:54:22
+ * @LastEditors: west_ng 457395070@qq.com
+ * @LastEditTime: 2024-09-19 21:56:42
+ * @FilePath: /xhs-marketing-api/AuthenticationOauth/AdvertiserGet.php
  */
 
 namespace AuthenticationOauth;

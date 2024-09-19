@@ -2,13 +2,13 @@
 
 namespace core\Profile;
 
-use ToutiaoSdk\TouTiaoClient;
+use ToutiaoSdk\XiaoHongShuClient;
 
 class BaseModule
 {
     protected $client;
 
-    public function __construct(TouTiaoClient $client)
+    public function __construct(XiaoHongShuClient $client)
     {
         $this->client = $client;
     }

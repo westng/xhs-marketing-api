@@ -1,9 +1,11 @@
 {
     "name": "westng/xhs-marketing-api",
-    "description": "小红书开放平台 MarketingApi SDK",
+    "description": "小红书开放平台 聚光 MarketingApi SDK",
     "keywords": [
         "小红书",
         "小红书PHP SDK",
+        "聚光",
+        "聚光 PHP SDK",
         "marketing-api",
         "sdk"
     ],

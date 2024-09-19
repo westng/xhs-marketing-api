@@ -1,9 +1,10 @@
 <?php
 /**
  * 刷新access_token
- * User: westng
- * Date: 2024/4/21
- * Time: 11:10
+ * @Date: 2024-09-19 21:54:22
+ * @LastEditors: west_ng 457395070@qq.com
+ * @LastEditTime: 2024-09-19 21:55:11
+ * @FilePath: /xhs-marketing-api/AuthenticationOauth/RefreshToken.php
  */
 
 namespace AuthenticationOauth;
@@ -16,7 +17,7 @@ class RefreshToken extends RpcRequest
      * @var string
      */
     protected $method = 'POST';
-    protected $url = '/oauth2/refresh_token/';
+    protected $url = '/api/open/oauth2/refresh_token';
 
     protected $app_id;
     protected $secret;
