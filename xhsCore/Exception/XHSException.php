@@ -1,26 +1,35 @@
 <?php
-
-/**
- * Created by PhpStorm.
- * User: westng
- * Date: 2024/4/17
- * Time: 12:01
+/*
+ * @Date: 2024-09-22 12:36:33
+ * @LastEditors: west_ng 457395070@qq.com
+ * @LastEditTime: 2024-09-22 21:20:50
+ * @FilePath: /MineAdmin/vendor/westng/xhs-marketing-api/xhsCore/Exception/XHSException.php
  */
 
-namespace core\Exception;
+declare(strict_types=1);
+/**
+ * This file is part of MineAdmin.
+ *
+ * @link     https://www.mineadmin.com
+ * @document https://doc.mineadmin.com
+ * @contact  root@imoi.cn
+ * @license  https://github.com/mineadmin/MineAdmin/blob/master/LICENSE
+ */
 
-use Exception;
+namespace xhsCore\Exception;
 
-class XHSException extends Exception
+class XHSException extends \Exception
 {
     /**
      * @var string
      */
     private $errorCode;
+
     /**
      * @var string
      */
     private $errorMessage;
+
     /**
      * @var string
      */
@@ -28,16 +37,15 @@ class XHSException extends Exception
 
     /**
      * ClientException constructor.
-     *
-     * @param $errorMessage
-     * @param $errorCode
+     * @param mixed $errorMessage
+     * @param mixed $errorCode
      */
     public function __construct($errorMessage, $errorCode)
     {
         parent::__construct($errorMessage);
         $this->errorMessage = $errorMessage;
         $this->errorCode = $errorCode;
-        $this->setErrorType('TouTiao');
+        $this->setErrorType('XiaoHongShu');
     }
 
     /**
@@ -48,9 +56,6 @@ class XHSException extends Exception
         return $this->errorCode;
     }
 
-    /**
-     * @param $errorCode
-     */
     public function setErrorCode($errorCode)
     {
         $this->errorCode = $errorCode;
@@ -64,9 +69,6 @@ class XHSException extends Exception
         return $this->errorMessage;
     }
 
-    /**
-     * @param $errorMessage
-     */
     public function setErrorMessage($errorMessage)
     {
         $this->errorMessage = $errorMessage;
@@ -80,9 +82,6 @@ class XHSException extends Exception
         return $this->errorType;
     }
 
-    /**
-     * @param $errorType
-     */
     public function setErrorType($errorType)
     {
         $this->errorType = $errorType;

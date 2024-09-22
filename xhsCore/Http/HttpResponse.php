@@ -1,18 +1,30 @@
 <?php
-
-/**
- * Created by PhpStorm.
- * User: westng
- * Date: 2024/4/15
- * Time: 10:01
+/*
+ * @Date: 2024-09-22 12:36:33
+ * @LastEditors: west_ng 457395070@qq.com
+ * @LastEditTime: 2024-09-22 21:22:35
+ * @FilePath: /MineAdmin/vendor/westng/xhs-marketing-api/xhsCore/Http/HttpResponse.php
  */
-namespace core\Http;
+
+declare(strict_types=1);
+/**
+ * This file is part of MineAdmin.
+ *
+ * @link     https://www.mineadmin.com
+ * @document https://doc.mineadmin.com
+ * @contact  root@imoi.cn
+ * @license  https://github.com/mineadmin/MineAdmin/blob/master/LICENSE
+ */
+
+namespace xhsCore\Http;
+
 class HttpResponse
 {
     /**
      * @var string
      */
     private $body;
+
     /**
      * @var string
      */
@@ -26,9 +38,6 @@ class HttpResponse
         return $this->body;
     }
 
-    /**
-     * @param $body
-     */
     public function setBody($body)
     {
         $this->body = $body;
@@ -42,9 +51,6 @@ class HttpResponse
         return $this->status;
     }
 
-    /**
-     * @param $status
-     */
     public function setStatus($status)
     {
         $this->status = $status;

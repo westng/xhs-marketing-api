@@ -1,42 +1,44 @@
 <?php
 
+declare(strict_types=1);
 /**
- * Created by PhpStorm.
- * User: westng
- * Date: 2024/4/17
- * Time: 12:01
+ * This file is part of MineAdmin.
+ *
+ * @link     https://www.mineadmin.com
+ * @document https://doc.mineadmin.com
+ * @contact  root@imoi.cn
+ * @license  https://github.com/mineadmin/MineAdmin/blob/master/LICENSE
  */
 
-namespace core\Http;
+namespace xhsCore\Http;
 
-use core\Exception\XHSException;
+use xhsCore\Exception\XHSException;
 
 class HttpRequest
 {
     /**
      * @var int
      */
-    public static $connectTimeout = 20; //20 second
+    public static $connectTimeout = 20; // 20 second
+
     /**
      * @var int
      */
-    public static $readTimeout = 30; //30 second
+    public static $readTimeout = 30; // 30 second
 
     /**
-     *
-     * @param $url
      * @param string $httpMethod
      * @param null $postFields
      * @param null $headers
+     * @param mixed $url
      * @return HttpResponse
      * @throws XHSException
      */
     public static function curl($url, $httpMethod = 'GET', $postFields = null, $headers = null)
     {
-
         $ch = curl_init();
         curl_setopt($ch, CURLOPT_CUSTOMREQUEST, $httpMethod);
-        if (defined("ENABLE_HTTP_PROXY") && defined("HTTP_PROXY_IP") && defined("HTTP_PROXY_PORT") && ENABLE_HTTP_PROXY) {
+        if (defined('ENABLE_HTTP_PROXY') && defined('HTTP_PROXY_IP') && defined('HTTP_PROXY_PORT') && ENABLE_HTTP_PROXY) {
             curl_setopt($ch, CURLOPT_PROXYAUTH, CURLAUTH_BASIC);
             curl_setopt($ch, CURLOPT_PROXY, HTTP_PROXY_IP);
             curl_setopt($ch, CURLOPT_PROXYPORT, HTTP_PROXY_PORT);
@@ -55,7 +57,7 @@ class HttpRequest
             curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, self::$connectTimeout);
         }
 
-        //https request
+        // https request
         if (strlen($url) > 5 && stripos($url, 'https') === 0) {
             curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
             curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, false);
@@ -72,7 +74,7 @@ class HttpRequest
                 curl_setopt($ch, CURLOPT_SAFE_UPLOAD, false);
             }
         }
-
+        echo $url . PHP_EOL;
         $httpResponse = new HttpResponse();
         $httpResponse->setBody(curl_exec($ch));
         $httpResponse->setStatus(curl_getinfo($ch, CURLINFO_HTTP_CODE));
@@ -88,15 +90,14 @@ class HttpRequest
     }
 
     /**
-     * @param $postFildes
-     *
+     * @param mixed $postFildes
      * @return bool|string
      */
     public static function getPostHttpBody($postFildes)
     {
         $isMultipart = false;
         foreach ($postFildes as $apiParamKey => $apiParamValue) {
-            if ("@" == substr($apiParamValue, 0, 1)) {
+            if (substr($apiParamValue, 0, 1) == '@') {
                 $isMultipart = true;
                 if (class_exists('\CURLFile')) {
                     $postFildes[$apiParamKey] = new \CURLFile(substr($apiParamValue, 1));
@@ -107,25 +108,24 @@ class HttpRequest
     }
 
     /**
-     * @param $headers
-     *
+     * @param mixed $headers
      * @return array
      */
     public static function getHttpHearders($headers)
     {
-        $httpHeader = array();
+        $httpHeader = [];
         foreach ($headers as $key => $value) {
             $httpHeader[] = $key . ':' . $value;
         }
         return $httpHeader;
     }
 
-    public static function renderJSON($data = [], $msg = "ok", $code = 200)
+    public static function renderJSON($data = [], $msg = 'ok', $code = 200)
     {
         return json_encode([
             'code' => $code,
             'msg' => $msg,
-            'data' => $data
+            'data' => $data,
         ]);
     }
 }

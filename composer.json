@@ -23,9 +23,8 @@
     "minimum-stability": "dev",
     "autoload": {
         "psr-4": {
-            "XHSSdk\\": "core/Profile/",
-            "core\\": "core/",
-            "Report\\": "Report/"
+            "XHSSdk\\": "xhsCore/Profile/",
+            "xhsCore\\": "xhsCore/"
         }
     }
 }

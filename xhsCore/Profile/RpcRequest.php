@@ -1,14 +1,19 @@
 <?php
+
+declare(strict_types=1);
 /**
- * Created by PhpStorm.
- * User: westng
- * Date: 2024/4/21
- * Time: 14:38
+ * This file is part of MineAdmin.
+ *
+ * @link     https://www.mineadmin.com
+ * @document https://doc.mineadmin.com
+ * @contact  root@imoi.cn
+ * @license  https://github.com/mineadmin/MineAdmin/blob/master/LICENSE
  */
 
-namespace core\Profile;
+namespace xhsCore\Profile;
 
-use core\Exception\XHSException;
+use xhsCore\Exception\XHSException;
+use xhsCore\Http\HttpResponse;
 use XHSSdk\XHSClient;
 
 class RpcRequest implements RequestInteface
@@ -19,27 +24,27 @@ class RpcRequest implements RequestInteface
     protected $client;
 
     /**
-     * request url
+     * request url.
      */
     protected $url = '';
 
     /**
-     * request method
+     * request method.
      */
     protected $method = 'GET';
 
     /**
-     * request timeout
+     * request timeout.
      */
     protected $timeout = 60;
 
     /**
-     * request query params or raw body
+     * request query params or raw body.
      */
     protected $params = [];
 
     /**
-     * request header Content-Type
+     * request header Content-Type.
      */
     protected $content_type = 'application/json';
 
@@ -81,7 +86,7 @@ class RpcRequest implements RequestInteface
     public function addParam($key, $value)
     {
         $this->params[$key] = $value;
-        $this->$key = $value;
+        $this->{$key} = $value;
         return $this;
     }
 
@@ -89,7 +94,7 @@ class RpcRequest implements RequestInteface
     {
         foreach ($array as $key => $value) {
             if (property_exists($this, $key)) {
-                $this->$key = $value;
+                $this->{$key} = $value;
             }
             $this->params[$key] = $value;
         }
@@ -107,12 +112,12 @@ class RpcRequest implements RequestInteface
     }
 
     /**
-     * @return \core\Http\HttpResponse
+     * @return HttpResponse
      * @throws XHSException
      */
     public function send()
     {
-        if (!$this->client instanceof XHSClient) {
+        if (! $this->client instanceof XHSClient) {
             throw new XHSException('Request can not be send by null, TouTiaoClent`s instance should be set before send', 500);
         }
         return $this->client->excute($this);

@@ -1,12 +1,16 @@
 <?php
+
+declare(strict_types=1);
 /**
- * Created by PhpStorm.
- * User: westng
- * Date: 2024/4/21
- * Time: 11:55
+ * This file is part of MineAdmin.
+ *
+ * @link     https://www.mineadmin.com
+ * @document https://doc.mineadmin.com
+ * @contact  root@imoi.cn
+ * @license  https://github.com/mineadmin/MineAdmin/blob/master/LICENSE
  */
 
-namespace core\Profile;
+namespace xhsCore\Profile;
 
 interface RequestInteface
 {

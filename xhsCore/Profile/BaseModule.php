@@ -2,8 +2,8 @@
 /*
  * @Date: 2024-09-22 12:36:33
  * @LastEditors: west_ng 457395070@qq.com
- * @LastEditTime: 2024-09-22 21:25:51
- * @FilePath: /MineAdmin/vendor/westng/xhs-marketing-api/index.php
+ * @LastEditTime: 2024-09-22 21:22:47
+ * @FilePath: /MineAdmin/vendor/westng/xhs-marketing-api/xhsCore/Profile/BaseModule.php
  */
 
 declare(strict_types=1);
@@ -15,7 +15,17 @@ declare(strict_types=1);
  * @contact  root@imoi.cn
  * @license  https://github.com/mineadmin/MineAdmin/blob/master/LICENSE
  */
-use xhsCore\Autoloader\Autoloader;
 
-require_once __DIR__ . '/xhsCore/Autoloader/Autoloader.php';
-Autoloader::loadDirectories();
+namespace xhsCore\Profile;
+
+use XHSSdk\XHSClient;
+
+class BaseModule
+{
+    protected $client;
+
+    public function __construct(XHSClient $client)
+    {
+        $this->client = $client;
+    }
+}

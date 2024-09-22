@@ -1,27 +1,33 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: westng
- * Date: 2024/4/17
- * Time: 12:01
+/*
+ * @Date: 2024-09-22 12:36:33
+ * @LastEditors: west_ng 457395070@qq.com
+ * @LastEditTime: 2024-09-22 21:20:12
+ * @FilePath: /MineAdmin/vendor/westng/xhs-marketing-api/xhsCore/Autoloader/Autoloader.php
  */
 
-namespace core\Autoloader;
+declare(strict_types=1);
+/**
+ * This file is part of MineAdmin.
+ *
+ * @link     https://www.mineadmin.com
+ * @document https://doc.mineadmin.com
+ * @contact  root@imoi.cn
+ * @license  https://github.com/mineadmin/MineAdmin/blob/master/LICENSE
+ */
+
+namespace xhsCore\Autoloader;
 
 class Autoloader
 {
-    private static $autoloadPathArray = array(
-        'core/Autoloader', 'core/Http', 'core/Regions', 'core/Profile', 'core/Exception'
-    );
+    private static $autoloadPathArray = [
+        'xhsCore/Autoloader', 'xhsCore/Http', 'xhsCore/Regions', 'xhsCore/Profile', 'xhsCore/Exception',
+    ];
 
-    private static $replacePath = array(
-        "XHSSdk\\" => "\\core\\Profile\\"
-    );
+    private static $replacePath = [
+        'XHSSdk\\' => '\xhsCore\Profile\\',
+    ];
 
-    /**
-     *
-     * @param $className
-     */
     public static function autoload($className)
     {
         $directories = dirname(dirname(__DIR__));
@@ -33,7 +39,6 @@ class Autoloader
                 include_once $file;
                 break;
             }
-
         }
         foreach (self::$replacePath as $searchStr => $replaceStr) {
             $className = str_replace($searchStr, $replaceStr, $className);
@@ -43,7 +48,6 @@ class Autoloader
         if (is_file($file)) {
             var_dump(1234, $file);
             include_once $file;
-
         }
     }
 
@@ -51,7 +55,7 @@ class Autoloader
     {
         $directories = dirname(dirname(__DIR__));
         foreach (glob($directories . DIRECTORY_SEPARATOR . '*') as $directory) {
-            if (is_dir($directory) && basename($directory) !== 'core') {
+            if (is_dir($directory) && basename($directory) !== 'xhsCore') {
                 self::$autoloadPathArray[] = basename($directory);
             }
         }
@@ -63,4 +67,4 @@ class Autoloader
     }
 }
 
-spl_autoload_register(['core\Autoloader\Autoloader', 'autoload'], true, true);
+spl_autoload_register(['xhsCore\Autoloader\Autoloader', 'autoload'], true, true);

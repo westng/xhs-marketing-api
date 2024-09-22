@@ -1,17 +1,23 @@
 <?php
+
+declare(strict_types=1);
 /**
- * Created by PhpStorm.
- * User: westng
- * Date: 2024/4/17
- * Time: 16:29
+ * This file is part of MineAdmin.
+ *
+ * @link     https://www.mineadmin.com
+ * @document https://doc.mineadmin.com
+ * @contact  root@imoi.cn
+ * @license  https://github.com/mineadmin/MineAdmin/blob/master/LICENSE
  */
 
 namespace XHSSdk;
 
-use core\Exception\InvalidParamException;
-use core\Exception\XHSException;
-use core\Http\HttpRequest;
-use core\Profile\RequestInteface;
+use Report\Module;
+use xhsCore\Exception\InvalidParamException;
+use xhsCore\Exception\XHSException;
+use xhsCore\Http\HttpRequest;
+use xhsCore\Http\HttpResponse;
+use xhsCore\Profile\RequestInteface;
 
 class XHSClient
 {
@@ -23,29 +29,25 @@ class XHSClient
 
     public static $is_sanbox = false;
 
-    private static $instance = null;
+    private static $instance;
 
     // 禁止被实例化
-    private function __construct($access_token, $is_sanbox, $server_url, $box_url)
-    {
-    }
+    private function __construct($access_token, $is_sanbox, $server_url, $box_url) {}
 
     // 禁止clone
-    private function __clone()
-    {
-    }
+    private function __clone() {}
 
     //  实例化自己并保存到$instance中，已实例化则直接调用
     public static function getInstance($access_token, $is_sanbox, $server_url, $box_url): object
     {
         static::$access_token = $access_token;
-        if (null !== $is_sanbox) {
+        if ($is_sanbox !== null) {
             static::$is_sanbox = $is_sanbox;
         }
-        if (null !== $server_url) {
+        if ($server_url !== null) {
             static::$server_url = $server_url;
         }
-        if (null !== $box_url) {
+        if ($box_url !== null) {
             static::$box_url = $box_url;
         }
         if (empty(self::$instance[$access_token])) {
@@ -55,10 +57,10 @@ class XHSClient
     }
 
     /**
-     * 执行 HTTP 请求并返回响应
+     * 执行 HTTP 请求并返回响应.
      * @param RequestInterface $request 包含请求信息的请求对象，必须实现 RequestInterface 接口
-     * @param string|null $url 目标 URL，可选参数
-     * @return \core\Http\HttpResponse 包含 HTTP 响应的 HttpResponse 对象
+     * @param null|string $url 目标 URL，可选参数
+     * @return HttpResponse 包含 HTTP 响应的 HttpResponse 对象
      * @throws XHSException 当请求校验失败或出现错误时抛出异常
      */
     public function excute(RequestInteface $request, $url = null)
@@ -70,30 +72,30 @@ class XHSClient
         // 构建请求头，包括 Access-Token 和 Content-Type
         $headers = [
             'Access-Token' => static::$access_token,
-            'Content-Type' => $request->getContentType()
+            'Content-Type' => $request->getContentType(),
         ];
         // 如果没有提供 URL，从请求对象中获取 URL
-        if (null == $url) {
+        if ($url == null) {
             $url = $request->getUrl();
             // 检查 URL 是否为空
-            if ('' == $url) {
+            if ($url == '') {
                 throw new InvalidParamException('HTTP URL is required, and now the URL is empty');
             }
 
             // 如果 URL 不以 "http" 开头，根据环境配置拼接完整的 URL
-            if ("http" != substr($url, 0, 4)) {
+            if (substr($url, 0, 4) != 'http') {
                 $url = (static::$is_sanbox ? static::$box_url : static::$server_url) . $request->getUrl();
             }
         }
 
         // 如果请求方式为GET将参数转换拼接在URL中
-        if ("GET" == $request->getMethod()) {
+        if ($request->getMethod() == 'GET') {
             $url .= '?' . http_build_query($params);
             $params = null; // 释放内存，避免内存溢出
         }
 
         // 如果 Content-Type 包含 "json"，则将请求参数转换为 JSON 格式
-        if (strpos($request->getContentType(), "json") > 0) {
+        if (strpos($request->getContentType(), 'json') > 0) {
             $params = json_encode($params);
         }
 
@@ -105,7 +107,6 @@ class XHSClient
 
     public static function Report()
     {
-        return new \Report\Module(self::$instance[static::$access_token]);
+        return new Module(self::$instance[static::$access_token]);
     }
-
 }

@@ -1,15 +1,18 @@
 <?php
-/*
- * @Description: 获取access_token
- * @Date: 2024-09-19 21:54:22
- * @LastEditors: west_ng 457395070@qq.com
- * @LastEditTime: 2024-09-19 21:57:37
- * @FilePath: /xhs-marketing-api/AuthenticationOauth/GetAccessToken.php
+
+declare(strict_types=1);
+/**
+ * This file is part of MineAdmin.
+ *
+ * @link     https://www.mineadmin.com
+ * @document https://doc.mineadmin.com
+ * @contact  root@imoi.cn
+ * @license  https://github.com/mineadmin/MineAdmin/blob/master/LICENSE
  */
 
 namespace AuthenticationOauth;
 
-use core\Profile\RpcRequest;
+use xhsCore\Profile\RpcRequest;
 
 class GetAccessToken extends RpcRequest
 {
@@ -23,7 +26,10 @@ class GetAccessToken extends RpcRequest
     protected $cotent_type = 'application/json';
 
     protected $app_id;
+
     protected $secret;
+
     protected $grant_type;
+
     protected $auth_code;
 }
