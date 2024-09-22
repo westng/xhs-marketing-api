@@ -11,7 +11,7 @@ namespace core\Exception;
 
 use Exception;
 
-class XiaoHongShuException extends Exception
+class XHSException extends Exception
 {
     /**
      * @var string

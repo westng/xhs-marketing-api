@@ -6,20 +6,20 @@
  * Time: 16:29
  */
 
-namespace XiaoHongShuSdk;
+namespace XHSSdk;
 
 use core\Exception\InvalidParamException;
-use core\Exception\XiaoHongShuException;
+use core\Exception\XHSException;
 use core\Http\HttpRequest;
 use core\Profile\RequestInteface;
 
-class XiaoHongShuClient
+class XHSClient
 {
     public static $access_token;
 
-    public static $server_url = 'https://adapi.xiaohongshu.com';
+    public static $server_url = 'https://adapi.XHS.com';
 
-    public static $box_url = 'https://adapi.xiaohongshu.com';
+    public static $box_url = 'https://adapi.XHS.com';
 
     public static $is_sanbox = false;
 
@@ -59,7 +59,7 @@ class XiaoHongShuClient
      * @param RequestInterface $request 包含请求信息的请求对象，必须实现 RequestInterface 接口
      * @param string|null $url 目标 URL，可选参数
      * @return \core\Http\HttpResponse 包含 HTTP 响应的 HttpResponse 对象
-     * @throws XiaoHongShuException 当请求校验失败或出现错误时抛出异常
+     * @throws XHSException 当请求校验失败或出现错误时抛出异常
      */
     public function excute(RequestInteface $request, $url = null)
     {

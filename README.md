@@ -23,7 +23,7 @@ core/                          SDK核心
 
 ```php
 // 获取token, refresh_token
-$auth = new XiaoHongShuSdk\XiaoHongShuAuth(APPID, SECRET);
+$auth = new XHSSdk\XHSAuth(APPID, SECRET);
 print_r($auth->getAccessToken(AUTH_CODE));
 
 // 刷新token
@@ -32,7 +32,7 @@ print_r($auth->refreshToken(REFRESH_TOKEN));
 
 ```php
 // 调用示例
-$client = new XiaoHongShuSdk\XiaoHongShuClient(TOKEN);
+$client = new XHSSdk\XHSClient(TOKEN);
 $args = [];
 $req = $client::AdvertisingDelivery()->campaignGet()->setArgs($args)->send();
 var_dump($req->getBody());

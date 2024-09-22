@@ -23,7 +23,7 @@
     "minimum-stability": "dev",
     "autoload": {
         "psr-4": {
-            "XiaoHongShuSdk\\": "core/Profile/",
+            "XHSSdk\\": "core/Profile/",
             "core\\": "core/",
             "Report\\": "Report/"
         }

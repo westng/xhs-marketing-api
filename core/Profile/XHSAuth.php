@@ -6,17 +6,17 @@
  * Time: 12:28
  */
 
-namespace XiaoHongShuSdk;
+namespace XHSSdk;
 
 use AuthenticationOauth\GetAccessToken;
 use AuthenticationOauth\RefreshToken;
 use AuthenticationOauth\AdvertiserGet;
-use core\Exception\XiaoHongShuException;
+use core\Exception\XHSException;
 use core\Http\HttpRequest;
 use core\Profile\RequestInteface;
-use KuaishouSdk\KuaishouClient;
+use XHSSdk\XHSClient;
 
-class XiaoHongShuAuth
+class XHSAuth
 {
     public $app_id;
 
@@ -54,7 +54,7 @@ class XiaoHongShuAuth
      * @param RequestInteface $request
      * @param null $url
      * @return \core\Http\HttpResponse
-     * @throws XiaoHongShuException
+     * @throws XHSException
      */
     private function execute(RequestInteface $request, $url = null)
     {
@@ -73,7 +73,7 @@ class XiaoHongShuAuth
      * 获取access_token
      * @param $auth_code
      * @return string
-     * @throws XiaoHongShuException
+     * @throws XHSException
      */
     public function getAccessToken($auth_code)
     {
@@ -86,7 +86,7 @@ class XiaoHongShuAuth
     /**
      * 刷新access_token
      * @return string
-     * @throws XiaoHongShuException
+     * @throws XHSException
      */
     public function refreshToken($refresh_token)
     {
@@ -104,16 +104,16 @@ class XiaoHongShuAuth
     public function getAuthCodeUrl($cb_url, $scope, $state = "your_custom_params")
     {
         $cb_url_encode = urlencode($cb_url);
-        // https://ad-market.xiaohongshu.com/auth?appId=1214&scope=["report_service","ad_query","ad_manage","account_manage"]&redirectUri=https://www.recyou.cn/api/xhs/callback/index&state=abcd
+        // https://ad-market.XHS.com/auth?appId=1214&scope=["report_service","ad_query","ad_manage","account_manage"]&redirectUri=https://www.recyou.cn/api/xhs/callback/index&state=abcd
         return "https://ad-market.xiaohongshu.com/auth?appId=$this->app_id&state=$state&scope=$scope&redirectUri={$cb_url_encode}";
     }
 
     /**
      * @param $access_token
-     * @return KuaishouClient
+     * @return XHSClient
      */
     public function makeClient($access_token)
     {
-        return XiaoHongShuClient::getInstance($access_token, $this->is_sanbox, $this->server_url, $this->box_url);
+        return XHSClient::getInstance($access_token, $this->is_sanbox, $this->server_url, $this->box_url);
     }
 }

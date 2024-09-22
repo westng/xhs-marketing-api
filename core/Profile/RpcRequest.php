@@ -8,13 +8,13 @@
 
 namespace core\Profile;
 
-use core\Exception\XiaoHongShuException;
-use XiaoHongShuSdk\XiaoHongShuClient;
+use core\Exception\XHSException;
+use XHSSdk\XHSClient;
 
 class RpcRequest implements RequestInteface
 {
     /**
-     * @var XiaoHongShuClient
+     * @var XHSClient
      */
     protected $client;
 
@@ -108,12 +108,12 @@ class RpcRequest implements RequestInteface
 
     /**
      * @return \core\Http\HttpResponse
-     * @throws XiaoHongShuException
+     * @throws XHSException
      */
     public function send()
     {
-        if (!$this->client instanceof XiaoHongShuClient) {
-            throw new XiaoHongShuException('Request can not be send by null, TouTiaoClent`s instance should be set before send', 500);
+        if (!$this->client instanceof XHSClient) {
+            throw new XHSException('Request can not be send by null, TouTiaoClent`s instance should be set before send', 500);
         }
         return $this->client->excute($this);
     }

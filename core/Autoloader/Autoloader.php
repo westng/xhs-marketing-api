@@ -15,7 +15,7 @@ class Autoloader
     );
 
     private static $replacePath = array(
-        "XiaoHongShuSdk\\" => "\\core\\Profile\\"
+        "XHSSdk\\" => "\\core\\Profile\\"
     );
 
     /**
