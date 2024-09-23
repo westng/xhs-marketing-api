@@ -12,12 +12,10 @@ declare(strict_types=1);
 
 namespace XHSSdk;
 
-use AuthenticationOauth\GetAccessToken;
-use AuthenticationOauth\RefreshToken;
+use Authentication\GetAccessToken;
+use Authentication\RefreshToken;
 use xhsCore\Exception\XHSException;
 use xhsCore\Http\HttpRequest;
-use xhsCore\Http\HttpResponse;
-use xhsCore\Profile\RequestInteface;
 
 class XHSAuth
 {
@@ -61,8 +59,9 @@ class XHSAuth
     public function getAccessToken($auth_code)
     {
         $request = new GetAccessToken();
-        $request->setParams(['app_id' => $this->app_id, 'secret' => $this->secret, 'auth_code' => $auth_code]);
+        $request->setParams(['grant_type' => 'auth_code', 'app_id' => $this->app_id, 'secret' => $this->secret]);
         $request->addParam('auth_code', $auth_code);
+        print_r($request);
         return $this->execute($request)->getBody();
     }
 
@@ -90,8 +89,7 @@ class XHSAuth
     public function getAuthCodeUrl($cb_url, $scope, $state = 'your_custom_params')
     {
         $cb_url_encode = urlencode($cb_url);
-        // https://ad-market.XHS.com/auth?appId=1214&scope=["report_service","ad_query","ad_manage","account_manage"]&redirectUri=https://www.recyou.cn/api/xhs/callback/index&state=abcd
-        return "https://ad-market.xiaohongshu.com/auth?appId={$this->app_id}&state={$state}&scope={$scope}&redirectUri={$cb_url_encode}";
+        return "https://qianchuan.jinritemai.com/openapi/qc/audit/oauth.html?app_id={$this->app_id}&state={$state}&scope={$scope}&material_auth=1&redirect_uri={$cb_url_encode}";
     }
 
     /**
@@ -105,10 +103,10 @@ class XHSAuth
 
     /**
      * @param null $url
-     * @return HttpResponse
+     * @param mixed $request
      * @throws XHSException
      */
-    private function execute(RequestInteface $request, $url = null)
+    private function execute($request, $url = null)
     {
         $params = $request->getParams();
         $headers = [

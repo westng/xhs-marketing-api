@@ -10,18 +10,18 @@ declare(strict_types=1);
  * @license  https://github.com/mineadmin/MineAdmin/blob/master/LICENSE
  */
 
-namespace AuthenticationOauth;
+namespace Authentication;
 
 use xhsCore\Profile\RpcRequest;
 
-class AdvertiserGet extends RpcRequest
+class GetAccessToken extends RpcRequest
 {
     /**
      * @var string
      */
-    protected $method = 'GET';
+    protected $method = 'POST';
 
-    protected $url = '/oauth2/advertiser/get/';
+    protected $url = '/api/open/oauth2/access_token';
 
     protected $cotent_type = 'application/json';
 
@@ -29,5 +29,7 @@ class AdvertiserGet extends RpcRequest
 
     protected $secret;
 
-    protected $access_token;
+    protected $grant_type;
+
+    protected $auth_code;
 }

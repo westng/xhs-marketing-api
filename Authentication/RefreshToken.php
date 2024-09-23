@@ -1,8 +1,14 @@
 <?php
 /*
+ * @Date: 2024-09-22 22:01:45
+ * @LastEditors: west_ng 457395070@qq.com
+ * @LastEditTime: 2024-09-23 12:26:27
+ * @FilePath: /MineAdmin/vendor/westng/xhs-marketing-api/Authentication/RefreshToken.php
+ */
+/*
  * @Date: 2024-09-22 12:36:33
  * @LastEditors: west_ng 457395070@qq.com
- * @LastEditTime: 2024-09-22 21:23:46
+ * @LastEditTime: 2024-09-23 12:23:51
  * @FilePath: /MineAdmin/vendor/westng/xhs-marketing-api/AuthenticationOauth/RefreshToken.php
  */
 
@@ -16,7 +22,7 @@ declare(strict_types=1);
  * @license  https://github.com/mineadmin/MineAdmin/blob/master/LICENSE
  */
 
-namespace AuthenticationOauth;
+namespace Authentication;
 
 use xhsCore\Profile\RpcRequest;
 
@@ -27,7 +33,7 @@ class RefreshToken extends RpcRequest
      */
     protected $method = 'POST';
 
-    protected $url = '/api/open/oauth2/refresh_token';
+    protected $url = '/api/open/oauth2/access_token';
 
     protected $app_id;
 

@@ -74,7 +74,6 @@ class HttpRequest
                 curl_setopt($ch, CURLOPT_SAFE_UPLOAD, false);
             }
         }
-        echo $url . PHP_EOL;
         $httpResponse = new HttpResponse();
         $httpResponse->setBody(curl_exec($ch));
         $httpResponse->setStatus(curl_getinfo($ch, CURLINFO_HTTP_CODE));
@@ -85,7 +84,7 @@ class HttpRequest
             );
         }
         curl_close($ch);
-
+        print_r($url);
         return $httpResponse;
     }
 

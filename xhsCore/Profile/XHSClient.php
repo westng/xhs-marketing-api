@@ -23,9 +23,9 @@ class XHSClient
 {
     public static $access_token;
 
-    public static $server_url = 'https://adapi.XHS.com';
+    public static $server_url = 'https://adapi.xiaohongshu.com';
 
-    public static $box_url = 'https://adapi.XHS.com';
+    public static $box_url = 'https://adapi.xiaohongshu.com';
 
     public static $is_sanbox = false;
 
