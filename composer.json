@@ -24,7 +24,8 @@
     "autoload": {
         "psr-4": {
             "XHSSdk\\": "xhsCore/Profile/",
-            "xhsCore\\": "xhsCore/"
+            "xhsCore\\": "xhsCore/",
+            "Authentication\\": "Authentication/"
         }
     }
 }

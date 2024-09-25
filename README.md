@@ -15,7 +15,7 @@ composer require westng/xhs-marketing-api
 ## Directory Structure
 
 ```
-AuthenticationOauth/           小红书OAuth2.0授权
+Authentication/           小红书OAuth2.0授权
 core/                          SDK核心
 ```
 
